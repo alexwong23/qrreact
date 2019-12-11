@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import InputBox from './components/Input';
-
-
+// import InputBox from './components/Input';
+import GenerateButton from './components/Generate';
+import CodeBox from './components/Code';
 
 function App() {
-  const [items, setItems] = useState([]);
 
-  const add = (v) => {
-    setItems([
-      ...items,
-      {value: v, key: items.length}
-    ])
-  };
+  // const [items, setItems] = useState([]);
 
-  const remove = (key) => {
-    console.log(key)
-    // const newItems = [...items]
-    // newItems.splice(key,1);
-    setItems(items.filter(it=>it.key !== key))
-  }
+  // const add = (items) => {
+  //   setItems([
+  //     ...items,
+  //     {value: v, key: items.length}
+  //   ])
+  // };
 
-  useEffect(()=>{
-    console.log(items);
-  }, [items])
+  // const open = (key) => {
+  //   console.log(items.splice(key,1).value) // display item value
+  //   // setItems(items.filter(it=>it.key !== key))
+  // }
+
+  //
+  // useEffect(()=>{
+  //   console.log(items);
+  // }, [items])
 
   // useEffect(()=>{
   //   // do setup
@@ -34,14 +34,19 @@ function App() {
   //   }
   // }, [items])
 
+  const [codes, setCodes] = useState([]);
+
+  const generate = (items) => {
+    setCodes(codes => (items));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>TODO-APP</h3>
-        <InputBox add={add} />
-        {items.map((item, index) => { return <div key={item.key} onClick={()=>remove(item.key)}>{item.value}</div> })}
-
-      </header>
+      <h3>QR-Generator</h3>
+      <GenerateButton generate={generate} />
+      {codes.map((code) => {
+        return <CodeBox codeFromApp={code}/>
+      })}
     </div>
   );
 }
