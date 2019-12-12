@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Button} from 'antd';
+import { Button } from 'antd';
+import { utils } from "web3";
 var randomString = require("randomstring");
 
 const GenerateButton = ({generate}) => {
@@ -8,9 +9,13 @@ const GenerateButton = ({generate}) => {
     <Button
       type="primary"
       onClick={() => {
-        generate(Array.from({length:30},()=> ({
-          value: randomString.generate(16)
-        })));
+        generate(Array.from({length:10}).map(item => {
+          let randString = randomString.generate(16);
+          return {
+            value: randString,
+            hash: utils.soliditySha3(randString)
+          };
+        }));
       }}>
       Generate QR Codes!
     </Button>
