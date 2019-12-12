@@ -13,7 +13,7 @@ const CodeBox = ({codeFromApp:code}) => {
         <img src="access_logo.jpeg" alt="Access Logo"/>
       </div>
       <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris .</p>
       </div>
       <div class="footer">
         <p>Powered by <img src="jedtrade-logo-01.png" alt="Jupitor Logo"/></p>

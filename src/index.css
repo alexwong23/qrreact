@@ -14,4 +14,7 @@ code {
 
 @media print {
   @page {size: A4 portrait; }
+  .Interaction {
+    display: none;
+  }
 }
